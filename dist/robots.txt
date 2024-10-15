@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /private/  # Exempel på en sektion som inte ska indexeras
+Allow: /

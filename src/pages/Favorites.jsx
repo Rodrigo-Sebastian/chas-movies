@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { removeFavorite } from '../redux/favoritesSlice'; 
 import FavoritesBg from '../../public/chas-favorites.jpg'
 
+//hämtar favoritfilmer från Redux state via useSelector
 const Favorites = () => {
     const favorites = useSelector(state => state.favorites);
+    //dispatch används för att skicka actions till Redux store som hanterar borttagning av en favorit film
     const dispatch = useDispatch();
 
+    //funktionen tar emot filmens imdbID och skickar en removeFavorite action till Redux store för att ta bort den valda filmen från favoritlistan.
     const handleRemoveFromFavorites = (id) => {
         dispatch(removeFavorite({ imdbID: id })); 
 

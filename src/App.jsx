@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import MovieDetails from "./pages/MovieDetails";
@@ -8,8 +8,10 @@ import Header from "./components/Header";
 function App() {
 
   return (
-   <Router>
+    //möjliggöra navigering i applikationen utan att ladda om sidan
+   <Router> 
       <Header/>
+    {/* definerar olika sidor som användaren kan navigera. */}
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/favorites" element={<Favorites/>}/>

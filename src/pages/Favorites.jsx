@@ -13,6 +13,12 @@ const Favorites = () => {
     const handleRemoveFromFavorites = (id) => {
         dispatch(removeFavorite({ imdbID: id })); 
 
+        // Skicka ett event till GTM via dataLayer
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'remove_from_favorites',
+            movieId: id,
+        });
     };
 
   return (

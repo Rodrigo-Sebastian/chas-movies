@@ -14,6 +14,8 @@ const SearchBar = ({ setMovies, setError }) => {//settMovies - tar in en prop so
     */
     const handleSearch = async () => {
       const results = await fetchMovies(searchTerm);
+      console.log(results); // Logga resultaten för att kontrollera strukturen
+
 
       // Kontrollera om det finns resultat och sätt felmeddelande om det inte finns
       if (results.length === 0) {

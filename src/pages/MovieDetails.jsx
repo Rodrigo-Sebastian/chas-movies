@@ -51,6 +51,13 @@ const MovieDetails = () => {
             dispatch(addFavorite(movie));
             setMessage('Filmen har lagts till i dina favoriter!'); 
             setMessageColor('text-green-500'); // Sätt färg till grön
+            // Trigger Google Tag Manager event
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'add_to_favorites',
+                movie_title: movie.Title // Använd rätt variabel för filmens titel
+            });
+            
         }
     };
 

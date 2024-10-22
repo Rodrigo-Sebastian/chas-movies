@@ -54,8 +54,9 @@ const MovieDetails = () => {
             // Trigger Google Tag Manager event
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                event: 'add_to_favorites',
-                movie_title: movie.Title // Använd rätt variabel för filmens titel
+                event: 'addToFavorites',
+                movie_title: movie?.Title || '', // Använd rätt variabel för filmens titel, lägg till default-värde
+                movieId: movie?.imdbID || '' // Använd rätt variabel för filmens ID, lägg till default-värde    
             });
             
         }

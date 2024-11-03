@@ -1,23 +1,28 @@
-//Använder slice från redux toolkit. som kombinerar initalt state & reducers(funktioner som ändrar state)
-//och actions i ett enda objekt.
 import { createSlice } from '@reduxjs/toolkit';
+
+// Funktion för att hämta favoriter från localStorage
+const loadFavoritesFromLocalStorage = () => {
+  const favorites = localStorage.getItem('favorites');
+  return favorites ? JSON.parse(favorites) : [];
+};
 
 const favoritesSlice = createSlice({
   name: 'favorites',
-  initialState: [],
+  initialState: loadFavoritesFromLocalStorage(), // Ladda favoriter från localStorage vid initialisering
   reducers: {
-    //ett objekt som innehåller funktioner (reducers) som hanterar hur state ska uppdateras när olika actions kallas.
-    //här har vi addFavorite och removeFavorite.
     addFavorite: (state, action) => {
-      state.push(action.payload);
+      const updatedState = [...state, action.payload];
+      localStorage.setItem('favorites', JSON.stringify(updatedState)); // Spara till localStorage
+      return updatedState; // Returnera det uppdaterade state
     },
     removeFavorite: (state, action) => {
-      return state.filter(movie => movie.imdbID !== action.payload.imdbID);
+      const updatedState = state.filter(movie => movie.imdbID !== action.payload.imdbID);
+      localStorage.setItem('favorites', JSON.stringify(updatedState)); // Uppdatera localStorage
+      return updatedState; // Returnera det uppdaterade state
     },
   },
 });
 
-//exportation av våra actions och reducer som är funktionen som uppdaterar vårt state baserat på 
-//respektiv action som körs.
+// Exportera våra actions och reducer
 export const { addFavorite, removeFavorite } = favoritesSlice.actions;
 export default favoritesSlice.reducer;

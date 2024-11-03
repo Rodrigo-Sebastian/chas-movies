@@ -52,7 +52,7 @@ const MovieDetails = () => {
             setMessage('Filmen har lagts till i dina favoriter!'); 
             setMessageColor('text-green-500'); // Sätt färg till grön
             // Trigger Google Tag Manager event
-            window.dataLayer = window.dataLayer || [];
+            window.dataLayer = window.dataLayer || [];            
             window.dataLayer.push({
                 event: 'addToFavorites',
                 movie_title: movie?.Title || '', // Använd rätt variabel för filmens titel, lägg till default-värde

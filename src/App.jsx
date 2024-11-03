@@ -4,8 +4,16 @@ import Favorites from './pages/Favorites';
 import MovieDetails from "./pages/MovieDetails";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import TagManager from 'react-gtm-module'; // Importera GTM-modulen
+
 
 function App() {
+
+  const tagManagerArgs = {
+    gtmId: 'GTM-M2BL65SC'
+  };
+
+  TagManager.initialize(tagManagerArgs);
 
   return (
     //möjliggöra navigering i applikationen utan att ladda om sidan

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import SearchBar from './searchBar';
+import SearchBar from './SearchBar';
 import background from '../../public/chas-movies-bg.jpg'
 import { Link } from 'react-router-dom';
 

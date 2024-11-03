@@ -6,12 +6,6 @@ const SearchBar = ({ setMovies, setError }) => {//settMovies - tar in en prop so
 
     
     //asynkron funktion som kallar på fetchmovies med sökordet från sökfältet och sättet resultatet i movies state.
-    /*
-    const handleSearch = async () => {
-        const results = await fetchMovies(searchTerm);
-        setMovies(results);
-    };
-    */
     const handleSearch = async () => {
       const results = await fetchMovies(searchTerm);
       console.log(results); // Logga resultaten för att kontrollera strukturen

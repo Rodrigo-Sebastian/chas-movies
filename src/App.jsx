@@ -4,7 +4,7 @@ import Favorites from './pages/Favorites';
 import MovieDetails from "./pages/MovieDetails";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import TagManager from 'react-gtm-module'; // Importera GTM-modulen
+import TagManager from 'react-gtm-module';
 
 
 function App() {

@@ -1,4 +1,9 @@
+# README
+# Chas Movies
 # React + Vite
+
+Om Projektet:
+Chas Movies är en React-baserad applikation för att söka filmer, visa detaljer och lägga till favoriter.
 
 Teknik information:
 - byggverktyg: Vite
